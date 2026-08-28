@@ -1,13 +1,17 @@
-<?php 
- include("conexao.php");
+<?php
+include_once('conexao.php');
 
- $sql = "SELECT * FROM";
+$query = mysqli_query($conexao, "SELECT * FROM ALUNOS");
 
- if($sql == query){
-    while{
+if (!$query) {
+    die("Query inválida: " . mysqli_error($conexao));
+}
 
-    }
+
+
+ while ($dados = mysqli_fetch_array($query)) {
+   echo $dados['nm_aluno'];
  }
+      
+    
 
-
-?>
