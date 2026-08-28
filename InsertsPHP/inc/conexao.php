@@ -1,12 +1,14 @@
 <?php
 $servidor = "localhost";
-$banco = "ETEC";
+$banco = "etec";
 $usuario = "root";
-$senha = "";
+$senha = "usbw";
 
 $conexao = new mysqli($servidor, $usuario, $senha, $banco);
 
 if($conexao->connect_error){
-    die("Erro de conexão: " . $conexao->connect_error);
+    die("Erro de conexao: " . $conexao->connect_error);
 }
+
+mysqli_set_charset($conexao, "utf8");
 ?>
